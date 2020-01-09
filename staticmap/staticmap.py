@@ -504,7 +504,7 @@ class StaticMap:
                 self._x_to_px(_lon_to_x(icon.coord[0], self.zoom)) - icon.offset[0],
                 self._y_to_px(_lat_to_y(icon.coord[1], self.zoom)) - icon.offset[1]
             )
-            image.paste(icon.img, position, icon.img)
+            image.paste(icon.img.convert("RGBA"), position, icon.img.convert("RGBA"))
 
 
 if __name__ == '__main__':
